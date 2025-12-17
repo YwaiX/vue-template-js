@@ -1,5 +1,42 @@
-# Vue 3 + Vite
+# Vite + Vue3 + js + vue-router + pinia + element-plus + axios + less
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+本项目基于Vite + Vue3 + js + vue-router + pinia + element-plus + axios + less创建
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+
+
+运行方式
+
+```text
+cd my-project
+npm i
+npm run dev
+```
+
+
+
+需要修改的地方
+
+```text
+utils/request.js
+stores/token.js
+router/index.js
+```
+
+
+
+可以修改的地方
+
+```text
+vite.config.js
+```
+
+该文件中的`server.proxy`,`server.host`,`server.port`可以进行更改,其他地方不建议更改
+
+
+
+可以添加内容的地方
+
+```text
+api/index.js
+```
+

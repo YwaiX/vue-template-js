@@ -1,4 +1,4 @@
-import { useTokenStore } from '@/stores/token'
+import { useToken } from '@/stores/token'
 import { createRouter, createWebHashHistory } from "vue-router"
 
 const router = createRouter({
@@ -7,7 +7,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const { token } = useTokenStore()
+  const { token } = useToken()
   if ((to.name !== 'login') && token == '') {
     next({ name: 'login' })
   } else {

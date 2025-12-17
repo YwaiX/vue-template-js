@@ -1,5 +1,4 @@
-import router from '@/router'
-import { useTokenStore } from '@/stores/token.js'
+import { useToken } from '@/stores/token.js'
 import axios from "axios"
 import { ElMessage } from 'element-plus'
 
@@ -13,7 +12,7 @@ const request = axios.create({
 
 // 添加请求拦截器
 request.interceptors.request.use(function (config) {
-  const { token } = useTokenStore()
+  const { token } = useToken()
   if (token) {
     config.headers['Authorization'] = `Bearer ${token}`
   }
@@ -57,10 +56,7 @@ request.interceptors.response.use(function (response) {
       case 419:
         ElMessage({
           type: 'warning',
-          message: '登录过期,请重新登录',
-          onClose: () => {
-            router.push("/login")
-          }
+          message: '登录过期,请重新登录'
         })
         break
       case 500:
